@@ -1,0 +1,16 @@
+{
+  "name": "gbq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/bigquery": "^6.0.0",
+    "dotenv": "^16.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
