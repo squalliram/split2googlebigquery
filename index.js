@@ -3,12 +3,18 @@ require('dotenv').config();
 // Import the Google Cloud client library
 const {BigQuery} = require('@google-cloud/bigquery');
 const { table } = require('console');
-const bigquery = new BigQuery();
 
 exports.handler =  async function insertRowsAsStream(event) {
   // Inserts the JSON objects into my_dataset:my_table.
-
   
+  const fileName = event["queryStringParameters"].s;
+
+  const options = {
+    keyFilename: fileName
+  }
+  
+  const bigquery = new BigQuery(options);
+
   const datasetId = 'split_impressions';
   const tableId = 'impressions';
 
